@@ -11,7 +11,7 @@ export type Movie = {
 
 export const MovieCard: FC<Movie> = ({title, poster_path, vote_average, overview}) => {
     return (
-        <Div className="flex m-2 rounded-xl p-2 border" minWidth="30rem" maxWidth="30rem" minHeight="30rem" maxHeight="30rem" height="30rem">
+        <Div className="flex m-2 rounded-xl p-2 border" minWidth="40rem" maxWidth="40rem" minHeight="30rem" maxHeight="30rem" height="30rem">
             <img
                 src={`https://image.tmdb.org/t/p/w500${poster_path}`}
                 alt={title}
@@ -22,11 +22,11 @@ export const MovieCard: FC<Movie> = ({title, poster_path, vote_average, overview
                     borderRadius: '10px'
                 }}
             />
-            <Div className="p-2">
-                <h2 className="mt-2 mb-2">{title}</h2>
+            <Div className="p-2 m-2">
+                <Div className="font-bold text-3xl">{title}</Div>
                 <p>rate: {vote_average}</p>
-                <h2 className="mt-6 mb-2">Summary</h2>
-                <Div className="line-clamp-4">{overview}</Div>
+                <Div className="font-bold text-2xl mt-4">Description</Div>
+                <Div className="line-clamp-5">{overview}</Div>
             </Div>
         </Div>
     )
