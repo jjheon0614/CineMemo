@@ -1,6 +1,6 @@
 export default function NavigationBar() {
     return (
-        <div>
+        <div className="flex justify-between bg-base-100">
             <div>
                 Home
             </div>
@@ -11,6 +11,5 @@ export default function NavigationBar() {
                 Profile
             </div>
         </div>
-        
     )
 }
