@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTopMovies } from '../api';
+import type { Movie } from './MovieCard';
+import MovieCard from './MovieCard';
 
-export type Movie = {
-    id: number
-    title: string
-    poster_path: string
-    vote_average: number
-}
 
 export const TopMovies: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
@@ -22,23 +18,13 @@ export const TopMovies: React.FC = () => {
     return (
         <div style={{ display: 'flex', gap: '20px', overflowX: 'auto' }}>
             {movies.map((movie) => (
-                <div
+                <MovieCard 
                     key={movie.id}
-                    style={{
-                        width: '200px',
-                        textAlign: 'center',
-                        border: '1px solid #ddd',
-                        borderRadius: '10px',
-                        padding: '10px',
-                    }}>
-                    <img
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        alt={movie.title}
-                        style={{ width: '100%', borderRadius: '10px' }}
-                    />
-                    <h3 style={{ fontSize: '1rem', margin: '10px 0' }}>{movie.title}</h3>
-                    <p>⭐ {movie.vote_average}</p>
-                </div>
+                    id={movie.id}
+                    title={movie.title}
+                    poster_path={movie.poster_path}
+                    vote_average={movie.vote_average}
+                />
             ))}
         </div>
     )
