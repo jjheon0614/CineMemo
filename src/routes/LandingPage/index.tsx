@@ -1,4 +1,5 @@
-import { Div, TopMovies } from "../../components"
+import { Div } from "../../components"
+import TopMovies from "./TopMovies"
 
 export default function LandingPage() {
     return (

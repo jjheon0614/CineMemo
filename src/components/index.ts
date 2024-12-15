@@ -1,2 +1,2 @@
 export * from './Div'
-export * from './TopMovies'
+export * from './MovieCard'
