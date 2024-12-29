@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchTopMovies } from '../../api';
 import type { Movie } from '../../components';
-import {MovieCard, Div} from '../../components';
+import {MovieCard} from '../../components';
 
 export default function TopMovies() {
     const [movies, setMovies] = useState<Movie[]>([]);
